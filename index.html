@@ -7,19 +7,15 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:#FAF6F0;color:#1C1917;font-family:system-ui,-apple-system,sans-serif;line-height:1.45;padding:70px 14px 80px}
-button,a,label{cursor:pointer;touch-action:manipulation}
+button,a{cursor:pointer;touch-action:manipulation}
 .bar{position:fixed;left:0;right:0;height:60px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;background:#FAF6F0;z-index:90}
 .top{top:0;border-bottom:1px solid #DDD6CC}.bot{bottom:0;border-top:1px solid #DDD6CC}
 .btn{min-height:40px;padding:7px 13px;border-radius:99px;border:1px solid #CFC6B9;background:#FFFDF9;color:#1C1917;font:600 13px system-ui,sans-serif;display:inline-flex;align-items:center;gap:5px;text-decoration:none}
 .pri{background:#C85A32;color:#fff;border-color:#C85A32}.fst{background:#183126;color:#fff;border-color:#183126}
 .card{max-width:1100px;margin:0 auto;background:#FFFDF9;border:1px solid #DDD6CC;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
 .vis{background:#F3ECE1;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid #DDD6CC}
-.box{width:100%;max-width:440px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#E8DFD1;display:flex;align-items:center;justify-content:center;position:relative}
-.box.sq{aspect-ratio:1/1;max-width:390px}
-.box img{width:100%;height:100%;object-fit:cover;display:block}
-.g16{width:100%;height:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:5px;background:#9E4732}
-.tl{border:none;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:24px}
-.tl span{font-size:9px;font-weight:700;background:rgba(255,255,255,.85);padding:1px 4px;border-radius:4px;margin-top:2px;color:#1C1917}
+.box{width:100%;max-width:440px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#FFFDF9;display:flex;align-items:center;justify-content:center;border:1px solid #DDD6CC}
+.box img{width:100%;height:100%;object-fit:contain;display:block}
 .inf{padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
 .pill{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;padding:3px 9px;border-radius:99px;background:#F3ECE1;color:#183126;margin-right:5px}
 h1{font-family:Georgia,serif;font-size:clamp(20px,3vw,28px);color:#183126;margin-top:6px}
@@ -29,9 +25,9 @@ h1{font-family:Georgia,serif;font-size:clamp(20px,3vw,28px);color:#183126;margin
 .sp{background:#FAF6F0;border:1px solid #E5DDD2;border-radius:8px;padding:7px 9px;font-size:12.5px}
 .sp small{display:block;font-size:10px;color:#57534E;text-transform:uppercase}
 .roi{background:#EEF3EF;border-left:3px solid #183126;padding:8px 11px;font-size:12.5px;color:#183126;margin-top:10px}
-.mod{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;padding:14px;z-index:200}
+.mod{position:fixed;inset:0;background:rgba(0,0,0,.78);display:none;align-items:center;justify-content:center;padding:14px;z-index:200}
 .mod.open{display:flex}
-.pan{width:100%;max-width:720px;max-height:84vh;background:#FFFDF9;border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pan{width:100%;max-width:820px;max-height:88vh;background:#FFFDF9;border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
 .mhd{padding:12px 16px;background:#F3ECE1;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #DDD6CC}
 .mbd{padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
 .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
@@ -52,21 +48,18 @@ input,select,textarea{width:100%;padding:9px;border:1px solid #CFC6B9;border-rad
 
 <div class="card">
   <div class="vis">
-    <div class="box sq" id="vBox"></div>
+    <div class="box" id="vBox" onclick="zoom()"></div>
     <div style="width:100%;max-width:440px;display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:6px">
       <span id="fTag" style="font:11px monospace;color:#57534E">images/01-cover-matrix.jpg</span>
-      <div style="display:flex;gap:6px">
-        <button type="button" class="btn" style="min-height:34px;padding:4px 10px;font-size:12px" onclick="zoom()">🔍 Zoom</button>
-        <label class="btn" style="min-height:34px;padding:4px 10px;font-size:12px">📷 Photo<input type="file" accept="image/*" onchange="up1(this)" style="display:none"></label>
-      </div>
+      <button type="button" class="btn" style="min-height:34px;padding:4px 12px;font-size:12px" onclick="zoom()">🔍 Zoom</button>
     </div>
   </div>
   <div class="inf">
     <div>
       <div><span class="pill" id="pNum">Slide 01</span><span class="pill" id="pCat">Signature Style Matrix</span></div>
       <h1 id="pTit">Disha Saini — Illustrator &amp; Surface Print Designer</h1>
-      <div class="sub" id="pCli">NIFT Fashion Design Graduate · Based in India · disha16march@gmail.com</div>
-      <p class="dsc" id="pDsc">Tactile gouache storytelling engineered for commercial products, global puzzles, apparel embroidery, and luxury gifting.</p>
+      <div class="sub" id="pCli">NIFT Fashion Design Graduate · India · disha16march@gmail.com</div>
+      <p class="dsc" id="pDsc"></p>
       <div class="spg" id="pSpc"></div>
       <div class="roi" id="pRoi"></div>
     </div>
@@ -83,8 +76,8 @@ input,select,textarea{width:100%;padding:9px;border:1px solid #CFC6B9;border-rad
   <button type="button" class="btn fst" onclick="go(ix+1)">Next →</button>
 </div>
 
-<div class="mod" id="mD" onclick="if(event.target===this)cls()"><div class="pan"><div class="mhd"><strong>All 16 Portfolio Works</strong><button type="button" class="btn" onclick="cls()">✕</button></div><div class="mbd"><label class="btn fst" style="align-self:flex-start">📁 Bulk Load PDF Images<input type="file" accept="image/*" multiple onchange="upAll(this)" style="display:none"></label><div class="dgrid" id="dG"></div></div></div></div>
-<div class="mod" id="mL" onclick="if(event.target===this)cls()"><div class="pan" style="max-width:560px"><div class="mhd"><strong id="lT">Detail</strong><button type="button" class="btn" onclick="cls()">✕</button></div><div class="mbd" id="lB" style="text-align:center;align-items:center"></div></div></div>
+<div class="mod" id="mD" onclick="if(event.target===this)cls()"><div class="pan"><div class="mhd"><strong>All 16 Portfolio Works</strong><button type="button" class="btn" onclick="cls()">✕</button></div><div class="mbd"><div class="dgrid" id="dG"></div></div></div></div>
+<div class="mod" id="mL" onclick="if(event.target===this)cls()"><div class="pan" style="max-width:860px"><div class="mhd"><strong id="lT">Detail</strong><button type="button" class="btn" onclick="cls()">✕</button></div><div class="mbd" id="lB" style="text-align:center;align-items:center"></div></div></div>
 <div class="mod" id="mS" onclick="if(event.target===this)cls()"><div class="pan" style="max-width:500px"><div class="mhd"><strong>Visitor &amp; ROI Stats</strong><button type="button" class="btn" onclick="cls()">✕</button></div><div class="mbd" id="sB"></div></div></div>
 <div class="mod" id="mC" onclick="if(event.target===this)cls()"><div class="pan" style="max-width:520px"><div class="mhd"><strong>1-Tap Commission Brief</strong><button type="button" class="btn" onclick="cls()">✕</button></div><div class="mbd">
   <div style="display:flex;justify-content:space-between;align-items:center;background:#F3ECE1;padding:9px 12px;border-radius:10px"><strong>disha16march@gmail.com</strong><button type="button" class="btn" onclick="cp('disha16march@gmail.com')">📋 Copy Email</button></div>
@@ -95,14 +88,8 @@ input,select,textarea{width:100%;padding:9px;border:1px solid #CFC6B9;border-rad
 </div></div></div>
 
 <script>
-var T=[
-["🐱","White Cat","#F4A4B8","Stationery & Apparel"],["🌼","Pink Bloom","#B79E3B","Stickers & Ceramics"],["🦆","Goose","#8973B8","Nursery & Gift Wrap"],["👩🏽","Muse","#E78CA4","Editorial Portrait"],
-["🍓","Strawberry","#D4633B","Packaging & Totes"],["🕊️","White Dove","#265239","Greeting Cards & Scarves"],["🧃","Milk Carton","#F2D5DC","Pop-Art Merch"],["🌺","Hibiscus","#2E6146","Saree & Cushion Print"],
-["🐯","Bengal Tiger","#D97F2B","Carpet & Cushion Weave"],["🐠","Koi Pond","#8CB3B8","Silk Kantha Embroidery"],["🍅","Tomatoes","#9E2A2B","Kitchen Linen & Aprons"],["👒","Sunhat","#1E5945","Book Cover & Poster"],
-["🌹","2010 Stamp","#C8A44D","Heritage Motif"],["🍊","Jasmine","#E39B38","Perfume & Candle Box"],["🧕🏽","Lilac Muse","#C87D65","Character Art"],["🫖","Teapot","#EAE0D5","Tableware & Tea Tin"]
-];
 var S=[
-["01","Signature Style Matrix","Disha Saini — Illustrator & Surface Print Designer","NIFT Fashion Design Graduate · India · disha16march@gmail.com","images/01-cover-matrix.jpg","Tactile gouache storytelling for global puzzles, luxury gifting, packaging, and textile embroidery. Tap any of the 16 tiles to inspect its commercial use.","Education|NIFT Fashion Design;Mediums|Gouache, Digital & Textile;Global Clients|UK, Australia, USA & India;Deliverables|Print-Ready CMYK & Repeats","NIFT garment & repeat engineering minimizes pre-press sampling rounds.","#E8B949",1],
+["01","Signature Style Matrix","Disha Saini — Illustrator & Surface Print Designer","NIFT Fashion Design Graduate · India · disha16march@gmail.com","images/01-cover-matrix.jpg","Tactile gouache storytelling for global puzzles, luxury gifting, packaging, and textile embroidery. Tap the artwork to zoom in.","Education|NIFT Fashion Design;Mediums|Gouache, Digital & Textile;Global Clients|UK, Australia, USA & India;Deliverables|Print-Ready CMYK & Repeats","NIFT garment & repeat engineering minimizes pre-press sampling rounds.","#E8B949"],
 ["02","Toy & Giftware","Pick Me Up 1,000-Piece Bee Garden Puzzle","Commissioned by Talking Tables (United Kingdom)","images/02-talking-tables-bee-puzzle.jpg","Full-bleed 1,000-piece jigsaw illustration of an English country apiary and botanical borders, complete with collector poster and 29 bee trivia questions.","Client|Talking Tables · UK;Format|1,000-Piece Puzzle;Extras|Poster + 29 Trivia;Style|Micro Storytelling","High-density visual clues boost puzzler engagement and UK gift-shop shelf standout.","#4A7C59"],
 ["03","Art Licensing","Iconic Women Card Table Jigsaw Puzzle","Licensed to Walker & Co. Puzzle Co. (Perth, Australia)","images/03-walker-co-australia-puzzle.jpg","Licensed vibrant narrative illustration featuring trailblazing women around a card table framed by emerald foliage and cobalt decorative plates.","Licensee|Walker & Co. · Australia;Deal|Artwork Licensing;Palette|Emerald, Terracotta & Cobalt;Box|Rigid Keepsake Box","Turnkey licensed artworks accelerate product launches for boutique tabletop brands.","#1E5F4E"],
 ["04","Patrika Gift Shop","Echoes of the Nile — Ceramics & Rigid Box Packaging","The Patrika Gift Shop (Surface Pattern + Box Art)","images/04-patrika-echoes-of-nile.jpg","Tabletop ceramic collection (lotus plates, gold-rimmed ribbed mugs, coasters) paired with foil-stamped terracotta rigid gift boxes.","Collection|Echoes of the Nile;Products|Plates, Mugs & Boxes;Finish|Gold Decal + Foil Box;Motifs|Egyptian Lotus & Papyrus","Unified motifs across ceramics and rigid boxes elevate gifting value.","#B85335"],
@@ -119,11 +106,11 @@ var S=[
 ["15","Hand-Painted Archives","Hand-Painted Blue Pottery Amphorae, Carpet & Still Life","Traditional Gouache on Paper & Carpet Design","images/15-traditional-gouache-vases.jpg","Original hand-painted gouache amphorae with cobalt birds and lotuses on burnt-sienna grounds, carpet weave studies, and butterfly grids.","Medium|Gouache on Paper;Works|Blue Pottery & Carpet;Craft|100% Hand-Painted;Status|Originals Available","Authentic human brushwork gives brands an unmistakable signature in an AI-saturated market.","#B85335"],
 ["16","Direct Booking","Commission Disha Saini for Your Next Product or Campaign","Direct Studio Access · disha16march@gmail.com","images/16-commission-summary.jpg","Ready for a 1,000-piece puzzle, multi-SKU packaging suite, textile motifs, or editorial key art? Launch a structured brief in one tap.","Turnaround|2–4 Weeks;Files|Layered PSD/AI + CMYK;Terms|Buyout or Royalty;Email|disha16march@gmail.com","Tap 'Contact' in the top bar to auto-fill a brief and email Disha directly.","#183126"]
 ];
-var ix=0,up={},vw={0:1},tc=0,bo=0,t0=Date.now();
+var ix=0,vw={0:1},bo=0,t0=Date.now();
 function go(n){cls();ix=(n+16)%16;vw[ix]=1;window.scrollTo(0,0);rnd()}
 function cls(){var m=document.querySelectorAll(".mod");for(var i=0;i<m.length;i++)m[i].classList.remove("open")}
 function rnd(){
-  var s=S[ix],src=up[ix]||s[4],vb=document.getElementById("vBox");
+  var s=S[ix],vb=document.getElementById("vBox");
   document.getElementById("cnt").textContent="SLIDE "+s[0]+" / 16";
   document.getElementById("pNum").textContent="Slide "+s[0];
   document.getElementById("pCat").textContent=s[1];
@@ -135,26 +122,16 @@ function rnd(){
   var pts=s[6].split(";"),sh="";
   for(var i=0;i<pts.length;i++){var kv=pts[i].split("|");sh+='<div class="sp"><small>'+kv[0]+'</small><strong>'+kv[1]+'</strong></div>'}
   document.getElementById("pSpc").innerHTML=sh;
-  if(s[9]&&!up[ix]){
-    vb.className="box sq";var g="";
-    for(var k=0;k<T.length;k++)g+='<button type="button" class="tl" onclick="oT('+k+')" style="background:'+T[k][2]+'">'+T[k][0]+'<span>'+T[k][1]+'</span></button>';
-    vb.innerHTML='<div class="g16">'+g+'</div>';
-  }else{
-    vb.className="box";
-    vb.innerHTML='<img src="'+src+'" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'"><div style="display:none;width:100%;height:100%;background:'+s[8]+';color:#fff;padding:20px;flex-direction:column;align-items:center;justify-content:center;text-align:center"><strong style="font-size:18px;font-family:Georgia,serif">'+s[2]+'</strong><span style="font-size:12px;margin-top:6px;opacity:.9">Tap 📷 Photo to preview image</span></div>';
-  }
+  vb.innerHTML='<img src="'+s[4]+'" alt="'+s[2]+'" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'"><div style="display:none;width:100%;height:100%;background:'+s[8]+';color:#fff;padding:20px;flex-direction:column;align-items:center;justify-content:center;text-align:center"><strong style="font-size:18px;font-family:Georgia,serif">'+s[2]+'</strong></div>';
 }
 function openD(){cls();var h="";for(var i=0;i<S.length;i++)h+='<button type="button" class="dc" onclick="go('+i+')"><span class="pill">Slide '+S[i][0]+'</span><strong style="display:block;margin-top:4px;color:#183126">'+S[i][2]+'</strong><small style="color:#57534E">'+S[i][3]+'</small></button>';document.getElementById("dG").innerHTML=h;document.getElementById("mD").classList.add("open")}
-function oT(k){tc++;cls();var t=T[k];document.getElementById("lT").textContent=t[0]+" "+t[1];document.getElementById("lB").innerHTML='<div style="width:96px;height:96px;border-radius:16px;background:'+t[2]+';display:flex;align-items:center;justify-content:center;font-size:48px">'+t[0]+'</div><p><strong>Application:</strong> '+t[3]+'</p><button type="button" class="btn pri" onclick="openC(\'License motif: '+t[1]+' ('+t[3]+')\')">✉ License Motif</button>';document.getElementById("mL").classList.add("open")}
-function zoom(){cls();var s=S[ix];document.getElementById("lT").textContent="Slide "+s[0]+" · "+s[2];document.getElementById("lB").innerHTML='<img src="'+(up[ix]||s[4])+'" onerror="this.style.display=\'none\'" style="max-width:100%;max-height:48vh;border-radius:10px"><p>'+s[5]+'</p>';document.getElementById("mL").classList.add("open")}
-function openS(){cls();var c=Object.keys(vw).length,sec=Math.max(1,Math.round((Date.now()-t0)/1000));document.getElementById("sB").innerHTML='<div class="spg"><div class="sp"><small>Slides Viewed</small><strong>'+c+' / 16</strong></div><div class="sp"><small>Active Time</small><strong>'+sec+'s</strong></div><div class="sp"><small>Motif Taps</small><strong>'+tc+'</strong></div><div class="sp"><small>Briefs Opened</small><strong>'+bo+'</strong></div></div>';document.getElementById("mS").classList.add("open")}
+function zoom(){cls();var s=S[ix];document.getElementById("lT").textContent="Slide "+s[0]+" · "+s[2];document.getElementById("lB").innerHTML='<img src="'+s[4]+'" style="max-width:100%;max-height:66vh;border-radius:10px"><p>'+s[5]+'</p>';document.getElementById("mL").classList.add("open")}
+function openS(){cls();var c=Object.keys(vw).length,sec=Math.max(1,Math.round((Date.now()-t0)/1000));document.getElementById("sB").innerHTML='<div class="spg"><div class="sp"><small>Slides Viewed</small><strong>'+c+' / 16</strong></div><div class="sp"><small>Active Time</small><strong>'+sec+'s</strong></div><div class="sp"><small>Briefs Opened</small><strong>'+bo+'</strong></div><div class="sp"><small>Email</small><strong>disha16march@gmail.com</strong></div></div>';document.getElementById("mS").classList.add("open")}
 function um(){var a=document.getElementById("f1").value,b=document.getElementById("f2").value||"Client",c=document.getElementById("f3").value;document.getElementById("mA").href="mailto:disha16march@gmail.com?subject="+encodeURIComponent("Inquiry: "+a+" ("+b+")")+"&body="+encodeURIComponent("Hi Disha,\nCategory: "+a+"\nBrand: "+b+"\nBrief: "+c)}
 function openC(nt){bo++;cls();document.getElementById("f3").value=nt||("Interested in work like Slide "+S[ix][0]+": "+S[ix][2]);um();document.getElementById("mC").classList.add("open")}
 function brief(){openC("Inquiry inspired by Slide "+S[ix][0]+": "+S[ix][2])}
 function cp(x){if(navigator.clipboard)navigator.clipboard.writeText(x);alert("Copied: "+x)}
 function cpB(){cp("To: disha16march@gmail.com\nCategory: "+document.getElementById("f1").value+"\nBrand: "+document.getElementById("f2").value+"\nBrief: "+document.getElementById("f3").value)}
-function up1(el){var f=el.files&&el.files[0];if(!f)return;var r=new FileReader();r.onload=function(e){up[ix]=e.target.result;rnd()};r.readAsDataURL(f)}
-function upAll(el){var fs=Array.prototype.slice.call(el.files||[]).sort(function(a,b){return a.name.localeCompare(b.name,undefined,{numeric:true})}),n=Math.min(fs.length,16),d=0;for(var i=0;i<n;i++)(function(f,k){var r=new FileReader();r.onload=function(e){up[k]=e.target.result;if(++d===n)rnd()};r.readAsDataURL(f)})(fs[i],i)}
 rnd();
 </script>
 </body>
