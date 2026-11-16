@@ -282,4 +282,1234 @@
 
     .file-badge {
       font-family: var(--font-mono);
-      font
+      font-size: 11px;
+      color: var(--ink-soft);
+      background: rgba(255, 253, 249, 0.85);
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    /* 4x4 Interactive Motif Grid on Slide 1 */
+    .motif-matrix {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 4px;
+      padding: 6px;
+      background: #9E4732;
+    }
+
+    .motif-tile {
+      position: relative;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      overflow: hidden;
+    }
+
+    .motif-tile:hover, .motif-tile:focus-visible {
+      transform: scale(1.05);
+      z-index: 3;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+      outline: 2px solid #fff;
+    }
+
+    .motif-tile span.emoji {
+      font-size: clamp(20px, 3.2vw, 32px);
+      line-height: 1;
+    }
+
+    .motif-tile span.tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      margin-top: 3px;
+      color: rgba(28, 25, 23, 0.85);
+      background: rgba(255, 255, 255, 0.72);
+      padding: 1px 4px;
+      border-radius: 4px;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Editorial Info Column */
+    .info-pane {
+      padding: clamp(18px, 3vw, 34px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      overflow-y: auto;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--paper-alt);
+      color: var(--forest);
+      border: 1px solid var(--border);
+    }
+
+    .pill.accent {
+      background: rgba(200, 90, 50, 0.12);
+      color: var(--terracotta-dark);
+      border-color: rgba(200, 90, 50, 0.28);
+    }
+
+    .slide-title {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.18;
+      color: var(--forest);
+      margin-top: 8px;
+    }
+
+    .slide-client {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--terracotta);
+      margin-top: 4px;
+    }
+
+    .slide-desc {
+      font-size: clamp(14px, 1.5vw, 15.5px);
+      color: var(--ink-soft);
+      margin-top: 10px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .spec-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .spec-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      letter-spacing: 0.05em;
+    }
+
+    .spec-val {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 2px;
+    }
+
+    .roi-callout {
+      background: rgba(24, 49, 38, 0.06);
+      border-left: 3px solid var(--forest);
+      padding: 10px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13px;
+      color: var(--forest);
+      margin-top: 12px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    /* Bottom Dock */
+    .bottombar {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 16px;
+      background: rgba(250, 246, 240, 0.96);
+      border-top: 1px solid var(--border);
+      z-index: 30;
+    }
+
+    .progress-wrap {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .counter-text {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .dots-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      max-width: 100%;
+    }
+
+    .dot-btn {
+      width: 22px;
+      height: 22px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .dot-btn::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(24, 49, 38, 0.24);
+      transition: all 0.2s ease;
+    }
+
+    .dot-btn.active::after {
+      width: 20px;
+      background: var(--terracotta);
+    }
+
+    /* Modals & Drawers */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 49, 38, 0.62);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 100;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-panel {
+      width: 100%;
+      max-width: 860px;
+      max-height: 88dvh;
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--paper-alt);
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--forest);
+    }
+
+    .modal-body {
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* All Slides Grid */
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .dir-card {
+      text-align: left;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .dir-card:hover {
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .dir-card.current {
+      border: 2px solid var(--terracotta);
+      background: rgba(200, 90, 50, 0.06);
+    }
+
+    /* Contact Form */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: #fff;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 78px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--forest);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.22s ease;
+      z-index: 200;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 860px) {
+      .slide-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .visual-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 14px;
+      }
+      .artwork-frame {
+        max-width: 380px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .brand-sub { display: none; }
+      .btn .hide-sm { display: none; }
+      .btn { padding: 8px 11px; font-size: 12px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .specs-grid { grid-template-columns: 1fr; }
+      .dots-row { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="brand" id="btnHome" role="button" tabindex="0" title="Return to Slide 1">
+        <div class="brand-mark">DS</div>
+        <div class="brand-text">
+          <div class="brand-name">Disha Saini</div>
+          <div class="brand-sub">NIFT Fashion Design · Illustrator &amp; Print Designer</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button type="button" class="btn" id="btnAllSlides" aria-label="Open All Slides Directory">
+          <span>▦</span><span>All <span class="hide-sm">Slides</span></span>
+        </button>
+        <button type="button" class="btn" id="btnTelemetry" aria-label="Open Visitor Telemetry">
+          <span class="dot-live"></span><span>Stats</span>
+        </button>
+        <button type="button" class="btn btn-primary" id="btnContact" aria-label="Open 1-Tap Contact">
+          <span>✉</span><span>1-Tap <span class="hide-sm">Contact</span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Slide Stage -->
+    <main class="stage" id="stage" aria-live="polite"></main>
+
+    <!-- Bottom Navigation Dock -->
+    <footer class="bottombar">
+      <button type="button" class="btn" id="btnPrev" aria-label="Previous Slide">
+        <span>←</span><span class="hide-sm">Prev</span>
+      </button>
+      <div class="progress-wrap">
+        <div class="counter-text" id="slideCounter">SLIDE 01 / 16</div>
+        <div class="dots-row" id="dotsRow" role="tablist" aria-label="Slide selector"></div>
+      </div>
+      <button type="button" class="btn btn-forest" id="btnNext" aria-label="Next Slide">
+        <span class="hide-sm">Next</span><span>→</span>
+      </button>
+    </footer>
+  </div>
+
+  <!-- All Slides Directory Modal -->
+  <div class="modal-backdrop" id="modalDirectory" role="dialog" aria-modal="true" aria-labelledby="dirModalTitle">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h2 class="modal-title" id="dirModalTitle">Complete Portfolio Index (16 Works)</h2>
+        <button type="button" class="btn" id="closeDirectory">✕ Close</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;background:var(--bg);padding:12px;border-radius:12px;border:1px solid var(--border);">
+          <div style="font-size:13px;color:var(--ink-soft);">
+            <strong>Load Original PDF Scans:</strong> Select exported PNG/JPG images from your device to preview them live on their matching slides.
+          </div>
+          <label class="btn btn-forest" style="cursor:pointer;">
+            <span>📁 Upload PDF Images</span>
+            <input type="file" id="bulkImageLoader" accept="image/*" multiple style="display:none;" />
+          </label>
+        </div>
+        <div class="directory-grid" id="directoryGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox / Zoom Modal -->
+  <div class="modal-backdrop" id="modalLightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+    <div class="modal-panel" style="max-width:760px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="lbTitle">Artwork Detail</h2>
+        <button type="button" class="btn" id="closeLightbox">✕ Close</button>
+      </div>
+      <div class="modal-body" id="lbBody" style="align-items:center;text-align:center;"></div>
+    </div>
+  </div>
+
+  <!-- Telemetry Modal -->
+  <div class="modal-backdrop" id="modalTelemetry" role="dialog" aria-modal="true" aria-labelledby="telTitle">
+    <div class="modal-panel" style="max-width:680px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="telTitle">Live Visitor &amp; ROI Telemetry</h2>
+        <button type="button" class="btn" id="closeTelemetry">✕ Close</button>
+      </div>
+      <div class="modal-body" id="telemetryBody"></div>
+    </div>
+  </div>
+
+  <!-- 1-Tap Contact Modal -->
+  <div class="modal-backdrop" id="modalContact" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-panel" style="max-width:640px;">
+      <div class="modal-header">
+        <h2 class="modal-title" id="contactTitle">1-Tap Commission &amp; Licensing Brief</h2>
+        <button type="button" class="btn" id="closeContact">✕ Close</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;background:rgba(24,49,38,0.06);padding:12px 14px;border-radius:12px;">
+          <div>
+            <div style="font-size:12px;font-family:var(--font-mono);color:var(--ink-soft);">DIRECT STUDIO EMAIL</div>
+            <div style="font-weight:700;color:var(--forest);font-size:15px;">disha16march@gmail.com</div>
+          </div>
+          <button type="button" class="btn" id="btnCopyEmail">📋 Copy Email</button>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="briefScope">Project Category</label>
+            <select id="briefScope">
+              <option value="Surface &amp; Textile Print Design">Surface &amp; Textile Print Design</option>
+              <option value="Packaging &amp; Giftware Collection">Packaging &amp; Giftware Collection</option>
+              <option value="Jigsaw Puzzle / Tabletop Licensing">Jigsaw Puzzle / Tabletop Licensing</option>
+              <option value="Editorial / Book Cover / Show Poster">Editorial / Book Cover / Show Poster</option>
+              <option value="Bespoke Brand Portrait / Calendar">Bespoke Brand Portrait / Calendar</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="briefTerritory">Licensing Territory</label>
+            <select id="briefTerritory">
+              <option value="Global Commercial Rights">Global Commercial Rights</option>
+              <option value="India Domestic Retail">India Domestic Retail</option>
+              <option value="UK / Europe / Australia Export">UK / Europe / Australia Export</option>
+              <option value="Single Editorial / Campaign Run">Single Editorial / Campaign Run</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="briefBrand">Your Name / Brand</label>
+            <input type="text" id="briefBrand" placeholder="e.g., Creative Director, Studio Name" />
+          </div>
+          <div class="field">
+            <label for="briefTimeline">Target Launch</label>
+            <input type="text" id="briefTimeline" placeholder="e.g., Q1 2027 / 4 Weeks" />
+          </div>
+          <div class="field full">
+            <label for="briefNotes">Project Brief (Auto-linked to current slide)</label>
+            <textarea id="briefNotes" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a id="btnMailtoLink" href="mailto:disha16march@gmail.com" class="btn btn-primary" style="text-decoration:none;flex:1;">
+            🚀 Launch 1-Tap Email App
+          </a>
+          <button type="button" class="btn btn-forest" id="btnCopyBrief" style="flex:1;">
+            📄 Copy Full Brief to Clipboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* 16-Tile Matrix Data from Illustration Portfolio Page 1 */
+      var MOTIF_TILES = [
+        { emoji: "🐱", name: "White Cat & Daisy", bg: "#F4A4B8", use: "Stationery & Apparel Print" },
+        { emoji: "🌼", name: "Smiling Pink Bloom", bg: "#B79E3B", use: "Sticker & Ceramic Decal" },
+        { emoji: "🦆", name: "Hydrangea Goose", bg: "#8973B8", use: "Nursery & Gift Wrap" },
+        { emoji: "👩🏽", name: "Terracotta Muse", bg: "#E78CA4", use: "Editorial Portrait Series" },
+        { emoji: "🍓", name: "Strawberry Portrait", bg: "#D4633B", use: "Packaging & Tote Print" },
+        { emoji: "🕊️", name: "Forest White Dove", bg: "#265239", use: "Greeting Card & Scarf" },
+        { emoji: "🧃", name: "Strawberry Milk Carton", bg: "#F2D5DC", use: "Pop-Art Merch & Pins" },
+        { emoji: "🌺", name: "Hibiscus Botanical", bg: "#2E6146", use: "Saree & Cushion Repeat" },
+        { emoji: "🐯", name: "Folk Bengal Tiger", bg: "#D97F2B", use: "Carpet & Cushion Weaving" },
+        { emoji: "🐠", name: "Golden Koi Pond", bg: "#8CB3B8", use: "Silk Kantha Embroidery" },
+        { emoji: "🍅", name: "Heirloom Vine Tomatoes", bg: "#9E2A2B", use: "Kitchen Linen & Aprons" },
+        { emoji: "👒", name: "Sunhat Harvest", bg: "#1E5945", use: "Book Cover & Poster" },
+        { emoji: "🌹", name: "Rose India 2010 Stamp", bg: "#C8A44D", use: "Heritage Postage Motif" },
+        { emoji: "🍊", name: "Jasmine & Citrus", bg: "#E39B38", use: "Perfume & Candle Box" },
+        { emoji: "🧕🏽", name: "Lilac Stripe Portrait", bg: "#C87D65", use: "Character & Avatar Art" },
+        { emoji: "🫖", name: "Rose Porcelain Teapot", bg: "#EAE0D5", use: "Tableware & Tea Tin" }
+      ];
+
+      /* Complete 16-Slide Catalog covering both PDFs */
+      var SLIDES = [
+        {
+          id: "cover-matrix",
+          num: "01",
+          category: "Signature Style Matrix",
+          title: "Disha Saini — Illustrator & Surface Print Designer",
+          client: "NIFT Fashion Design Graduate · Based in India · disha16march@gmail.com",
+          imageFile: "images/01-cover-matrix.jpg",
+          desc: "Tactile gouache storytelling engineered for commercial products, global puzzles, apparel embroidery, and luxury gifting. Tap any of the 16 signature tiles on the left to inspect its commercial licensing application.",
+          specs: [
+            { label: "Education", value: "NIFT (Fashion Design)" },
+            { label: "Core Mediums", value: "Gouache, Digital & Textile" },
+            { label: "Global Reach", value: "UK, Australia, USA & India" },
+            { label: "Deliverables", value: "Print-Ready CMYK & Repeats" }
+          ],
+          roi: "Commercial Advantage: Cross-trained in fashion garment construction and surface print repeats, reducing pre-press sampling revisions.",
+          isMatrix: true,
+          svg: ""
+        },
+        {
+          id: "talking-tables-puzzle",
+          num: "02",
+          category: "Global Toy & Giftware",
+          title: "Pick Me Up 1,000-Piece Bee Garden Puzzle",
+          client: "Commissioned by Talking Tables (United Kingdom)",
+          imageFile: "images/02-talking-tables-bee-puzzle.jpg",
+          desc: "Full-bleed 1,000-piece jigsaw illustration depicting an English country apiary, cottage garden, and botanical borders—packaged with a collector poster and 29 bee trivia questions.",
+          specs: [
+            { label: "Client & Market", value: "Talking Tables · UK Retail" },
+            { label: "Format", value: "1,000-Piece Die-Cut Puzzle" },
+            { label: "Extras Included", value: "Reference Poster + 29 Trivia" },
+            { label: "Art Direction", value: "High-Detail Micro Storytelling" }
+          ],
+          roi: "Retail ROI: Dense edge-to-edge visual clues maximize puzzler assembly engagement and shelf standout in UK gift boutiques.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#E8B949"/><rect x="18" y="18" width="364" height="264" rx="12" fill="#4A7C59"/><circle cx="80" cy="80" r="36" fill="#F4D35E"/><circle cx="315" cy="215" r="42" fill="#F4D35E"/><rect x="145" y="125" width="110" height="95" rx="6" fill="#D98A3C" stroke="#7A4419" stroke-width="3"/><line x1="145" y1="150" x2="255" y2="150" stroke="#7A4419" stroke-width="3"/><line x1="145" y1="175" x2="255" y2="175" stroke="#7A4419" stroke-width="3"/><rect x="235" y="24" width="142" height="62" rx="8" fill="#F4B41A"/><text x="306" y="48" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="14" fill="#1C1917">PICK ME UP</text><text x="306" y="68" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="18" fill="#fff">PUZZLE · 1000</text><circle cx="74" cy="232" r="32" fill="#F4B41A"/><text x="74" y="229" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="700" fill="#1C1917">29 TRIVIA</text><text x="74" y="240" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" font-weight="700" fill="#1C1917">QUESTIONS</text></svg>'
+        },
+        {
+          id: "walker-co-puzzle",
+          num: "03",
+          category: "International Art Licensing",
+          title: "Iconic Women Card Table Jigsaw Puzzle",
+          client: "Licensed to Walker & Co. Puzzle Co. (Perth, Australia)",
+          imageFile: "images/03-walker-co-australia-puzzle.jpg",
+          desc: "Licensed vibrant narrative illustration featuring trailblazing women gathered around a card table set against emerald foliage and cobalt decorative plates for the Australian puzzle market.",
+          specs: [
+            { label: "Licensee", value: "Walker & Co. · Perth, Australia" },
+            { label: "Deal Structure", value: "International Artwork License" },
+            { label: "Palette", value: "Emerald, Terracotta & Cobalt" },
+            { label: "Packaging", value: "Full-Wrap Rigid Keepsake Box" }
+          ],
+          roi: "Licensing ROI: Ready-to-license narrative artworks accelerate time-to-market for boutique tabletop brands.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#1E5F4E"/><circle cx="150" cy="65" r="24" fill="#fff" stroke="#1E4E8C" stroke-width="4"/><circle cx="205" cy="52" r="28" fill="#fff" stroke="#1E4E8C" stroke-width="5"/><circle cx="255" cy="72" r="22" fill="#fff" stroke="#1E4E8C" stroke-width="4"/><ellipse cx="200" cy="245" rx="165" ry="65" fill="#E8999A"/><circle cx="95" cy="145" r="24" fill="#8D5524"/><circle cx="150" cy="138" r="24" fill="#C68642"/><circle cx="205" cy="135" r="24" fill="#E0AC69"/><circle cx="260" cy="140" r="24" fill="#D94E78"/><circle cx="315" cy="145" r="26" fill="#2B1B17"/><rect x="188" y="168" width="32" height="22" rx="3" fill="#C85A32" stroke="#fff" stroke-width="1.5"/><text x="200" y="282" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" font-weight="700" fill="#183126">WALKER &amp; CO. · PERTH, AUSTRALIA</text></svg>'
+        },
+        {
+          id: "echoes-of-nile",
+          num: "04",
+          category: "Patrika Gift Shop · Ceramics",
+          title: "Echoes of the Nile — Ceramics & Rigid Box Packaging",
+          client: "The Patrika Gift Shop (Surface Pattern + Structural Box Art)",
+          imageFile: "images/04-patrika-echoes-of-nile.jpg",
+          desc: "Complete tabletop ceramic collection (lotus plates, gold-rimmed ribbed mugs, and architectural coasters) paired with foil-stamped terracotta rigid gift boxes.",
+          specs: [
+            { label: "Collection", value: "Echoes of the Nile" },
+            { label: "Products", value: "Plates, Mugs, Coasters & Boxes" },
+            { label: "Finish", value: "Gold Decal Firing + Foil Box" },
+            { label: "Inspiration", value: "Egyptian Lotus & Papyrus Motifs" }
+          ],
+          roi: "Gifting ROI: Unified surface motifs across ceramic glazes and rigid gift boxes elevate perceived retail price and unboxing value.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#F2DEC8"/><rect x="42" y="55" width="130" height="130" rx="8" fill="#B85335"/><rect x="52" y="65" width="110" height="110" fill="none" stroke="#FFFDF9" stroke-width="2" stroke-dasharray="6 3"/><circle cx="280" cy="150" r="78" fill="#FFFDF9" stroke="#2D6A4F" stroke-width="6"/><circle cx="280" cy="150" r="56" fill="none" stroke="#C8A44D" stroke-width="2"/><path d="M280 105 C265 130, 295 130, 280 155 C265 175, 295 175, 280 195" stroke="#2D6A4F" stroke-width="4" fill="none"/><text x="200" y="275" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="15" fill="#183126">ECHOES OF THE NILE · CERAMICS &amp; BOX</text></svg>'
+        },
+        {
+          id: "patrika-playing-cards",
+          num: "05",
+          category: "Patrika Gift Shop · Tabletop",
+          title: "Endangered Animals of India — Collector Playing Cards",
+          client: "The Patrika Gift Shop (54-Card Custom Deck & Tuck Box)",
+          imageFile: "images/05-patrika-playing-cards.jpg",
+          desc: "Bespoke illustrated playing card deck and matching collector box celebrating India's endangered wildlife across custom court cards, aces, and symmetrical botanical card backs.",
+          specs: [
+            { label: "Deliverable", value: "Custom Court Cards + Tuck Box" },
+            { label: "Theme", value: "Endangered Wildlife of India" },
+            { label: "Print Spec", value: "350gsm Linen-Finish Cardstock" },
+            { label: "Category", value: "Boutique Gifting & Keepsakes" }
+          ],
+          roi: "Product ROI: Every card face acts as a collectible mini-print, driving organic social sharing during game nights.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#183126"/><rect x="85" y="45" width="120" height="185" rx="12" transform="rotate(-8 145 137)" fill="#FFFDF9" stroke="#E6A12E" stroke-width="3"/><rect x="195" y="55" width="120" height="185" rx="12" transform="rotate(7 255 147)" fill="#C85A32" stroke="#FFFDF9" stroke-width="3"/><text x="115" y="88" font-family="Fraunces,serif" font-weight="700" font-size="22" fill="#C85A32">A♠</text><circle cx="150" cy="142" r="28" fill="#E6A12E"/><text x="255" y="148" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="14" fill="#FFFDF9">ENDANGERED</text><text x="255" y="168" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="14" fill="#FFFDF9">INDIA DECK</text></svg>'
+        },
+        {
+          id: "patrika-diya-candles",
+          num: "06",
+          category: "Patrika Gift Shop · Festive Fragrance",
+          title: "Diwali Diya Two-Wick Candle Quartet & Gift Box",
+          client: "The Patrika Gift Shop (4 Scents · Packaging + Info Card)",
+          imageFile: "images/06-patrika-diya-candles.jpg",
+          desc: "Festive Diwali collection featuring four two-wick soy-coconut candles (Gratitude: Rose & Magnolia, Calm: Bamboo & White Tea, Growth: Neroli & Sage, Renew: African Cedar) in a hand-illustrated box.",
+          specs: [
+            { label: "Burn Time", value: "Up to 45 Hours · Two-Wick" },
+            { label: "SKUs Illustrated", value: "4 Scent Variants + Outer Box" },
+            { label: "Collateral", value: "Illustrated Scent Info Card" },
+            { label: "Occasion", value: "Diwali & Contemporary Home" }
+          ],
+          roi: "Seasonal ROI: Distinct color-coded botanical labels differentiate all four fragrance SKUs at a glance on retail displays.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#F7EFE4"/><rect x="45" y="95" width="70" height="110" rx="8" fill="#D94E78"/><rect x="125" y="95" width="70" height="110" rx="8" fill="#2D6A4F"/><rect x="205" y="95" width="70" height="110" rx="8" fill="#E6A12E"/><rect x="285" y="95" width="70" height="110" rx="8" fill="#1E4E8C"/><ellipse cx="80" cy="82" rx="6" ry="12" fill="#F59E0B"/><ellipse cx="160" cy="82" rx="6" ry="12" fill="#F59E0B"/><ellipse cx="240" cy="82" rx="6" ry="12" fill="#F59E0B"/><ellipse cx="320" cy="82" rx="6" ry="12" fill="#F59E0B"/><text x="200" y="248" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="15" fill="#183126">DIWALI DIYA QUARTET · 45H SOY CANDLES</text></svg>'
+        },
+        {
+          id: "patrika-wellness-suite",
+          num: "07",
+          category: "Patrika Gift Shop · Publishing & Paper",
+          title: "Wellness Journals, 25 Self-Love Letters & 35 Affirmation Cards",
+          client: "The Patrika Gift Shop (Wellness Tools Series + Tote Bags)",
+          imageFile: "images/07-patrika-wellness-suite.jpg",
+          desc: "Comprehensive lifestyle stationery suite spanning guided Wellness Journals, a keepsake box of 25 illustrated Self-Love Letters, 35 Affirmation Cards across 5 life pillars, and screen-printed canvas totes.",
+          specs: [
+            { label: "Product Line", value: "Journals, Cards, Letters & Totes" },
+            { label: "Card Count", value: "35 Affirmations + 25 Letters" },
+            { label: "Pillars", value: "Career, Self-Care, Belief & Love" },
+            { label: "Format", value: "Hardbound + Rigid Keepsake Boxes" }
+          ],
+          roi: "Catalog ROI: A cohesive visual system turns single-item buyers into multi-product wellness gift-set purchasers.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#EFE4D6"/><rect x="45" y="55" width="135" height="185" rx="10" fill="#244738"/><text x="112" y="135" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#FFFDF9">WELLNESS</text><text x="112" y="156" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#E6A12E">JOURNAL</text><rect x="205" y="55" width="150" height="85" rx="10" fill="#C85A32"/><text x="280" y="102" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#FFFDF9">25 SELF-LOVE LETTERS</text><rect x="205" y="155" width="150" height="85" rx="10" fill="#E6A12E"/><text x="280" y="202" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#183126">35 AFFIRMATION CARDS</text></svg>'
+        },
+        {
+          id: "applause-posters",
+          num: "08",
+          category: "Entertainment & OTT Key Art",
+          title: "Official Show Posters: Mind the Malhotras & Bloody Brothers",
+          client: "Commissioned by Applause Entertainment (India)",
+          imageFile: "images/08-applause-show-posters.jpg",
+          desc: "Illustrated character ensemble key art posters for Applause Entertainment's flagship streaming series 'Mind the Malhotras' (New Season) and thriller 'Bloody Brothers'.",
+          specs: [
+            { label: "Studio", value: "Applause Entertainment" },
+            { label: "Titles", value: "Mind the Malhotras & Bloody Brothers" },
+            { label: "Style", value: "Expressive Cast Likeness & Key Art" },
+            { label: "Usage", value: "Digital OTT Promo & Social Launch" }
+          ],
+          roi: "Campaign ROI: Hand-illustrated cast posters break through algorithmic feed fatigue compared to standard studio photo cutouts.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#23192D"/><rect x="42" y="36" width="142" height="228" rx="10" fill="#E6A12E"/><text x="113" y="140" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="16" fill="#1C1917">MIND THE</text><text x="113" y="162" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="16" fill="#1C1917">MALHOTRAS</text><rect x="216" y="36" width="142" height="228" rx="10" fill="#8B1E24"/><text x="287" y="140" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="16" fill="#FFFDF9">BLOODY</text><text x="287" y="162" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="16" fill="#FFFDF9">BROTHERS</text></svg>'
+        },
+        {
+          id: "heubach-calendars",
+          num: "09",
+          category: "Global Corporate Commissions",
+          title: "Heubach Group 2022 & 2023 Corporate Art Calendars",
+          client: "Heubach Group India (Global Color Solutions Leader)",
+          imageFile: "images/09-heubach-calendars.jpg",
+          desc: "Two consecutive annual calendar commissions for global pigment leader Heubach Group: 'Man and His Furry Friends' (2022) and 'The Joy and Celebration of Color' (2023).",
+          specs: [
+            { label: "Client", value: "Heubach Group (India / Global)" },
+            { label: "Editions", value: "2022 & 2023 Annual Calendars" },
+            { label: "2022 Theme", value: "Learning to Live With Each Other" },
+            { label: "2023 Theme", value: "Joy & Celebration of Color" }
+          ],
+          roi: "Enterprise ROI: Repeat annual commission demonstrating executive stakeholder trust for a global color-technology brand.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#C85A32"/><rect x="35" y="30" width="330" height="240" rx="14" fill="#FFFDF9"/><path d="M90 210 A110 110 0 0 1 310 210" fill="none" stroke="#E6A12E" stroke-width="18"/><path d="M115 210 A85 85 0 0 1 285 210" fill="none" stroke="#2D6A4F" stroke-width="14"/><circle cx="200" cy="145" r="24" fill="#1E4E8C"/><text x="200" y="248" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="14" fill="#183126">HEUBACH GROUP · 2022 &amp; 2023 CALENDARS</text></svg>'
+        },
+        {
+          id: "wakefield-books",
+          num: "10",
+          category: "Publishing & Book Cover Design",
+          title: "Wakefield Chronicles: Book 1 & Book 2 Cover Art",
+          client: "M. G. Hernandez (Author based in Hawaii, USA)",
+          imageFile: "images/10-wakefield-book-covers.jpg",
+          desc: "Full cover illustration and typography direction for 'Night Orchid' (Book 1) and 'Followers of the Owl' (Book 2) in the Wakefield Chronicles fantasy-mystery series.",
+          specs: [
+            { label: "Author & Market", value: "M. G. Hernandez · Hawaii, USA" },
+            { label: "Titles", value: "Night Orchid & Followers of the Owl" },
+            { label: "Scope", value: "Cover Art + Series Typography" },
+            { label: "Format", value: "Print Paperback & E-Book" }
+          ],
+          roi: "Publishing ROI: Cohesive series visual architecture builds instant reader recognition across digital storefronts.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#1A2639"/><rect x="52" y="36" width="132" height="228" rx="6" fill="#2E1A47" stroke="#E6A12E" stroke-width="2"/><text x="118" y="115" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#F4A4B8">NIGHT</text><text x="118" y="135" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#F4A4B8">ORCHID</text><text x="118" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#FFFDF9">BOOK 1</text><rect x="216" y="36" width="132" height="228" rx="6" fill="#183126" stroke="#E6A12E" stroke-width="2"/><text x="282" y="115" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#E6A12E">FOLLOWERS</text><text x="282" y="135" text-anchor="middle" font-family="Fraunces,serif" font-size="14" fill="#E6A12E">OF THE OWL</text><text x="282" y="220" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#FFFDF9">BOOK 2</text></svg>'
+        },
+        {
+          id: "label-ira-sarees",
+          num: "11",
+          category: "Textile & Couture Embroidery",
+          title: "Hand-Embroidered Saree Motifs & Line-Art Blueprints",
+          client: "Label Ira (Indian Handloom & Apparel Label)",
+          imageFile: "images/11-label-ira-sarees.jpg",
+          desc: "Original folk-inspired bird, lotus, elephant, and koi fish saree pallu and border motifs translated from crisp technical line drawings into artisan hand-embroidery on silk and linen.",
+          specs: [
+            { label: "Fashion Label", value: "Label Ira · India" },
+            { label: "Craft Translation", value: "Vector Line Art → Hand Kantha" },
+            { label: "Motifs", value: "Elephants, Birds, Lotus & Fish" },
+            { label: "NIFT Edge", value: "Production-Ready Stitch Specs" }
+          ],
+          roi: "Apparel ROI: Engineered specifically for artisan embroidery density, preventing fabric puckering on delicate handloom silks.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#1C1917"/><path d="M40 240 L160 60 L360 60 L260 240 Z" fill="#C8256B" opacity="0.88"/><circle cx="195" cy="145" r="34" fill="none" stroke="#E6A12E" stroke-width="3" stroke-dasharray="4 3"/><path d="M135 185 Q195 110 265 185" fill="none" stroke="#FFFDF9" stroke-width="3"/><text x="200" y="275" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="14" fill="#FFFDF9">LABEL IRA · HAND-EMBROIDERED SAREE MOTIFS</text></svg>'
+        },
+        {
+          id: "shweta-aww-commissions",
+          num: "12",
+          category: "Celebrity & Editorial Commissions",
+          title: "Shweta Tripathi Filmography Portrait & Aww Magazine Issue 7",
+          client: "Actor Shweta Tripathi & Aww Magazine ('Your Teenage Room')",
+          imageFile: "images/12-shweta-tripathi-aww-mag.jpg",
+          desc: "Bespoke career-retrospective portrait commissioned by acclaimed actor Shweta Tripathi (featuring Masaan, Mirzapur, Gone Kesh) alongside an editorial spread for Aww Magazine Issue 7.",
+          specs: [
+            { label: "Celebrity Client", value: "Shweta Tripathi (Mumbai)" },
+            { label: "Publication", value: "Aww Magazine · Issue 7" },
+            { label: "Editorial Theme", value: "Your Teenage Room Nostalgia" },
+            { label: "Social Impact", value: "High Organic Creator Amplification" }
+          ],
+          roi: "Visibility ROI: Celebrity and independent print magazine commissions validate cultural relevance and storytelling warmth.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#F2DEC8"/><rect x="36" y="34" width="154" height="232" rx="10" fill="#183126"/><text x="113" y="92" text-anchor="middle" font-family="Fraunces,serif" font-size="13" fill="#E6A12E">MASAAN · MIRZAPUR</text><circle cx="113" cy="155" r="32" fill="#D98A6C"/><text x="113" y="235" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#FFFDF9">SHWETA TRIPATHI</text><rect x="210" y="34" width="154" height="232" rx="10" fill="#D94E78"/><text x="287" y="135" text-anchor="middle" font-family="Fraunces,serif" font-size="15" fill="#FFFDF9">AWW MAGAZINE</text><text x="287" y="158" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#FFFDF9">ISSUE 7 · TEENAGE ROOM</text></svg>'
+        },
+        {
+          id: "twenty-seven-club",
+          num: "13",
+          category: "International Collector Art",
+          title: "The 27 Club & Custom Editorial Portraits",
+          client: "Overseas Private Client & Global Portrait Commissions",
+          imageFile: "images/13-27-club-portraits.jpg",
+          desc: "Ornate Moroccan-arch group portrait uniting Janis Joplin, Kurt Cobain, Jimi Hendrix, Jim Morrison, and Amy Winehouse for an overseas client, alongside gallery-wall character portraits.",
+          specs: [
+            { label: "Commission", value: "Overseas Collector Print" },
+            { label: "Subjects", value: "5 Music Icons in Architectural Setting" },
+            { label: "Series", value: "Bespoke Narrative Portraits" },
+            { label: "Medium", value: "Rich Textured Gouache Style" }
+          ],
+          roi: "Art Print ROI: Intricate architectural framing and nostalgic storytelling command premium print and licensing rates.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#1E3A5F"/><path d="M60 270 L60 110 Q200 20 340 110 L340 270 Z" fill="#C85A32" stroke="#E6A12E" stroke-width="5"/><circle cx="110" cy="175" r="18" fill="#F2C6A0"/><circle cx="155" cy="170" r="18" fill="#E0AC69"/><circle cx="200" cy="175" r="18" fill="#8D5524"/><circle cx="245" cy="170" r="18" fill="#C68642"/><circle cx="290" cy="175" r="18" fill="#F2C6A0"/><text x="200" y="252" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="14" fill="#FFFDF9">THE 27 CLUB · OVERSEAS COMMISSION</text></svg>'
+        },
+        {
+          id: "india-architecture",
+          num: "14",
+          category: "Heritage & Architectural Series",
+          title: "Royal Rajasthan Peacocks, Jharokha Arches & Folk Women",
+          client: "Artworks Inspired by India (Licensing-Ready Collection)",
+          imageFile: "images/14-india-inspired-series.jpg",
+          desc: "Celebration of Indian architectural geometry, Jaipur blue-pottery arches, dancing peacocks, and vibrant mirror-work folk attire ready for hospitality interiors, wallpaper, and stationery.",
+          specs: [
+            { label: "Collection", value: "Artworks Inspired by India" },
+            { label: "Availability", value: "Immediate Licensing / Wall Art" },
+            { label: "Applications", value: "Boutique Hotels, Wallpaper & Prints" },
+            { label: "Palette", value: "Indigo, Ochre, Emerald & Vermilion" }
+          ],
+          roi: "Hospitality ROI: Turnkey heritage art series ideal for luxury hotels, restaurant interiors, and home decor brands.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#1E4E8C"/><path d="M90 270 L90 120 C90 65, 200 40, 200 40 C200 40, 310 65, 310 120 L310 270 Z" fill="#FFFDF9" stroke="#E6A12E" stroke-width="5"/><circle cx="200" cy="175" r="55" fill="#2D6A4F"/><circle cx="200" cy="175" r="32" fill="#E6A12E"/><text x="200" y="256" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="13" fill="#183126">ARTWORKS INSPIRED BY INDIA</text></svg>'
+        },
+        {
+          id: "traditional-gouache",
+          num: "15",
+          category: "Traditional Hand-Painted Archives",
+          title: "Hand-Painted Blue Pottery Amphorae, Carpet & Still Life",
+          client: "Traditional Gouache on Cold-Press Paper & Carpet Design",
+          imageFile: "images/15-traditional-gouache-vases.jpg",
+          desc: "Original hand-painted gouache amphorae with cobalt birds and lotuses on burnt-sienna grounds, carpet weave studies, botanical butterfly grids, and vibrant Indian mela scenes.",
+          specs: [
+            { label: "Medium", value: "Hand-Painted Gouache on Paper" },
+            { label: "Highlights", value: "Blue Pottery Vases & Carpet Design" },
+            { label: "Authenticity", value: "100% Human Brushwork & Texture" },
+            { label: "Originals", value: "Available for Collector Acquisition" }
+          ],
+          roi: "Brand Differentiation: Authentic hand-painted brushwork gives brands an unmistakable human signature in an AI-saturated market.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#B85335"/><rect x="95" y="24" width="210" height="252" rx="6" fill="#FFFDF9"/><path d="M165 65 L235 65 L220 95 C265 115, 265 195, 225 225 L175 225 C135 195, 135 115, 180 95 Z" fill="#F4D5C6" stroke="#1E4E8C" stroke-width="4"/><circle cx="200" cy="155" r="24" fill="none" stroke="#1E4E8C" stroke-width="3"/><text x="200" y="258" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#183126">HAND-PAINTED GOUACHE ON PAPER</text></svg>'
+        },
+        {
+          id: "commission-launchpad",
+          num: "16",
+          category: "Direct Booking & Licensing",
+          title: "Commission Disha Saini for Your Next Product or Campaign",
+          client: "Direct Studio Access · disha16march@gmail.com",
+          imageFile: "images/16-commission-summary.jpg",
+          desc: "Whether you need a 1,000-piece puzzle illustration, a multi-SKU festive packaging suite, handloom textile motifs, or editorial key art, launch a structured brief in one tap.",
+          specs: [
+            { label: "Turnaround", value: "2–4 Weeks (Scope Dependent)" },
+            { label: "File Delivery", value: "Layered PSD/AI + CMYK Print Files" },
+            { label: "Licensing", value: "Buyout, Royalty, or Territory" },
+            { label: "Direct Contact", value: "disha16march@gmail.com" }
+          ],
+          roi: "Ready to Launch: Click '1-Tap Contact' below to auto-populate a commercial brief and connect directly with Disha.",
+          svg: '<svg viewBox="0 0 400 300" width="100%" height="100%"><rect width="400" height="300" fill="#183126"/><circle cx="200" cy="150" r="108" fill="none" stroke="#E6A12E" stroke-width="2" stroke-dasharray="6 4"/><text x="200" y="122" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="22" fill="#FFFDF9">LET’S CREATE</text><text x="200" y="150" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="22" fill="#E6A12E">SOMETHING ICONIC</text><text x="200" y="186" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="12" fill="#FFFDF9">disha16march@gmail.com</text></svg>'
+        }
+      ];
+
+      /* State & Safe Storage */
+      var state = {
+        index: 0,
+        uploadedImages: {},
+        stats: {
+          sessionStart: Date.now(),
+          slidesViewed: { 0: 1 },
+          tileClicks: 0,
+          briefOpens: 0,
+          emailsCopied: 0
+        }
+      };
+
+      try {
+        var saved = localStorage.getItem("disha_portfolio_stats_v3");
+        if (saved) {
+          var parsed = JSON.parse(saved);
+          if (parsed && parsed.slidesViewed) state.stats = parsed;
+        }
+      } catch (e) {}
+
+      function saveStats() {
+        try {
+          localStorage.setItem("disha_portfolio_stats_v3", JSON.stringify(state.stats));
+        } catch (e) {}
+      }
+
+      /* DOM References */
+      var stage = document.getElementById("stage");
+      var slideCounter = document.getElementById("slideCounter");
+      var dotsRow = document.getElementById("dotsRow");
+      var toastEl = document.getElementById("toast");
+
+      var modalDirectory = document.getElementById("modalDirectory");
+      var directoryGrid = document.getElementById("directoryGrid");
+      var modalLightbox = document.getElementById("modalLightbox");
+      var lbTitle = document.getElementById("lbTitle");
+      var lbBody = document.getElementById("lbBody");
+      var modalTelemetry = document.getElementById("modalTelemetry");
+      var telemetryBody = document.getElementById("telemetryBody");
+      var modalContact = document.getElementById("modalContact");
+
+      var toastTimer = null;
+      function showToast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toastEl.classList.remove("show");
+        }, 2600);
+      }
+
+      function copyText(text, successMsg) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            showToast(successMsg);
+          }).catch(function () {
+            fallbackCopy(text, successMsg);
+          });
+        } else {
+          fallbackCopy(text, successMsg);
+        }
+      }
+
+      function fallbackCopy(text, successMsg) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        try {
+          document.execCommand("copy");
+          showToast(successMsg);
+        } catch (e) {
+          showToast("Email: disha16march@gmail.com");
+        }
+        document.body.removeChild(ta);
+      }
+
+      /* Build Dots */
+      function renderDots() {
+        dotsRow.innerHTML = "";
+        SLIDES.forEach(function (s, idx) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "dot-btn" + (idx === state.index ? " active" : "");
+          b.setAttribute("aria-label", "Go to Slide " + s.num + ": " + s.title);
+          b.title = s.num + " · " + s.title;
+          b.addEventListener("click", function () {
+            goToSlide(idx);
+          });
+          dotsRow.appendChild(b);
+        });
+      }
+
+      /* Render Active Slide */
+      function renderSlide() {
+        var s = SLIDES[state.index];
+        slideCounter.textContent = "SLIDE " + s.num + " / " + String(SLIDES.length).padStart(2, "0");
+
+        var dots = dotsRow.querySelectorAll(".dot-btn");
+        dots.forEach(function (d, i) {
+          d.classList.toggle("active", i === state.index);
+        });
+
+        var customSrc = state.uploadedImages[state.index] || s.imageFile;
+        var visualHTML = "";
+
+        if (s.isMatrix && !state.uploadedImages[state.index]) {
+          var tilesHTML = MOTIF_TILES.map(function (t, tIdx) {
+            return (
+              '<button type="button" class="motif-tile" data-tile="' + tIdx + '" style="background:' + t.bg + ';" aria-label="Inspect ' + t.name + '">' +
+                '<span class="emoji">' + t.emoji + '</span>' +
+                '<span class="tag">' + t.name.split(" ")[0] + '</span>' +
+              '</button>'
+            );
+          }).join("");
+          visualHTML = '<div class="artwork-frame square"><div class="motif-matrix" id="motifMatrix">' + tilesHTML + '</div></div>';
+        } else {
+          visualHTML =
+            '<div class="artwork-frame" id="artworkFrame">' +
+              '<img class="real-photo" src="' + customSrc + '" alt="' + s.title + '" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\';" />' +
+              '<div style="display:none;width:100%;height:100%;">' + s.svg + '</div>' +
+            '</div>';
+        }
+
+        var specsHTML = s.specs.map(function (sp) {
+          return (
+            '<div class="spec-box">' +
+              '<div class="spec-label">' + sp.label + '</div>' +
+              '<div class="spec-val">' + sp.value + '</div>' +
+            '</div>'
+          );
+        }).join("");
+
+        stage.innerHTML =
+          '<article class="slide-card">' +
+            '<div class="visual-pane">' +
+              visualHTML +
+              '<div class="visual-toolbar">' +
+                '<span class="file-badge">' + s.imageFile + '</span>' +
+                '<div style="display:flex;gap:6px;">' +
+                  '<button type="button" class="btn" id="btnZoomSlide" style="min-height:36px;padding:4px 10px;font-size:12px;">🔍 Inspect</button>' +
+                  '<label class="btn" style="min-height:36px;padding:4px 10px;font-size:12px;cursor:pointer;">' +
+                    '📷 Swap Photo' +
+                    '<input type="file" id="singleSlideUpload" accept="image/*" style="display:none;" />' +
+                  '</label>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+            '<div class="info-pane">' +
+              '<div>' +
+                '<div class="meta-row">' +
+                  '<span class="pill accent">Slide ' + s.num + '</span>' +
+                  '<span class="pill">' + s.category + '</span>' +
+                '</div>' +
+                '<h1 class="slide-title">' + s.title + '</h1>' +
+                '<div class="slide-client">' + s.client + '</div>' +
+                '<p class="slide-desc">' + s.desc + '</p>' +
+                '<div class="specs-grid">' + specsHTML + '</div>' +
+                '<div class="roi-callout">' + s.roi + '</div>' +
+              '</div>' +
+              '<div class="cta-row">' +
+                '<button type="button" class="btn btn-primary" id="btnSlideBrief">✉ Commission Similar Work</button>' +
+                '<button type="button" class="btn" id="btnSlideIndex">▦ Browse All 16 Works</button>' +
+              '</div>' +
+            '</div>' +
+          '</article>';
+
+        /* Direct Bindings on Newly Rendered Elements */
+        var matrix = document.getElementById("motifMatrix");
+        if (matrix) {
+          matrix.querySelectorAll(".motif-tile").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+              var idx = parseInt(btn.getAttribute("data-tile"), 10);
+              var tile = MOTIF_TILES[idx];
+              state.stats.tileClicks += 1;
+              saveStats();
+              openLightbox(
+                tile.emoji + " " + tile.name,
+                '<div style="width:140px;height:140px;border-radius:20px;background:' + tile.bg + ';display:flex;align-items:center;justify-content:center;font-size:68px;box-shadow:var(--shadow-md);">' + tile.emoji + '</div>' +
+                '<p style="font-size:15px;color:var(--ink);max-width:440px;"><strong>Recommended Commercial Application:</strong> ' + tile.use + '</p>' +
+                '<p style="font-size:13px;color:var(--ink-soft);max-width:440px;">Part of Disha Saini’s signature 16-tile gouache portfolio grid (Illustration Portfolio, Page 1). Available as a standalone placement graphic or seamless repeat pattern.</p>' +
+                '<button type="button" class="btn btn-primary" id="lbLicenseTile">✉ License This Motif</button>'
+              );
+              var licBtn = document.getElementById("lbLicenseTile");
+              if (licBtn) {
+                licBtn.addEventListener("click", function () {
+                  closeAllModals();
+                  openContactModal("Motif Licensing: " + tile.name + " (" + tile.use + ")");
+                });
+              }
+            });
+          });
+        }
+
+        var btnZoom = document.getElementById("btnZoomSlide");
+        if (btnZoom) {
+          btnZoom.addEventListener("click", function () {
+            openLightbox(
+              "Slide " + s.num + " · " + s.title,
+              '<div style="width:100%;max-width:520px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid var(--border);">' +
+                '<img src="' + customSrc + '" alt="' + s.title + '" style="width:100%;height:100%;object-fit:contain;background:#EFE7DA;" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\';" />' +
+                '<div style="display:none;width:100%;height:100%;">' + (s.svg || '<div style="padding:40px;">16-Tile Signature Matrix</div>') + '</div>' +
+              '</div>' +
+              '<p style="font-size:14px;color:var(--ink-soft);max-width:520px;">' + s.desc + '</p>'
+            );
+          });
+        }
+
+        var singleUpload = document.getElementById("singleSlideUpload");
+        if (singleUpload) {
+          singleUpload.addEventListener("change", function (ev) {
+            var file = ev.target.files && ev.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              state.uploadedImages[state.index] = e.target.result;
+              renderSlide();
+              showToast("Loaded photo onto Slide " + s.num);
+            };
+            reader.readAsDataURL(file);
+          });
+        }
+
+        var btnSlideBrief = document.getElementById("btnSlideBrief");
+        if (btnSlideBrief) {
+          btnSlideBrief.addEventListener("click", function () {
+            openContactModal("Inquiry inspired by Slide " + s.num + ": " + s.title);
+          });
+        }
+
+        var btnSlideIndex = document.getElementById("btnSlideIndex");
+        if (btnSlideIndex) {
+          btnSlideIndex.addEventListener("click", openDirectoryModal);
+        }
+      }
+
+      function goToSlide(newIdx) {
+        if (newIdx < 0) newIdx = SLIDES.length - 1;
+        if (newIdx >= SLIDES.length) newIdx = 0;
+        state.index = newIdx;
+        state.stats.slidesViewed[newIdx] = (state.stats.slidesViewed[newIdx] || 0) + 1;
+        saveStats();
+        stage.scrollTop = 0;
+        renderSlide();
+      }
+
+      /* Modals */
+      function closeAllModals() {
+        modalDirectory.classList.remove("open");
+        modalLightbox.classList.remove("open");
+        modalTelemetry.classList.remove("open");
+        modalContact.classList.remove("open");
+      }
+
+      function openDirectoryModal() {
+        closeAllModals();
+        directoryGrid.innerHTML = "";
+        SLIDES.forEach(function (s, idx) {
+          var card = document.createElement("button");
+          card.type = "button";
+          card.className = "dir-card" + (idx === state.index ? " current" : "");
+          card.innerHTML =
+            '<span class="pill" style="align-self:flex-start;">Slide ' + s.num + '</span>' +
+            '<strong style="font-family:var(--font-serif);font-size:15px;color:var(--forest);">' + s.title + '</strong>' +
+            '<span style="font-size:12px;color:var(--ink-soft);">' + s.client + '</span>' +
+            '<span style="font-family:var(--font-mono);font-size:10px;color:var(--terracotta);">' + s.imageFile + '</span>';
+          card.addEventListener("click", function () {
+            closeAllModals();
+            goToSlide(idx);
+          });
+          directoryGrid.appendChild(card);
+        });
+        modalDirectory.classList.add("open");
+      }
+
+      function openLightbox(title, htmlContent) {
+        closeAllModals();
+        lbTitle.textContent = title;
+        lbBody.innerHTML = htmlContent;
+        modalLightbox.classList.add("open");
+      }
+
+      function openTelemetryModal() {
+        closeAllModals();
+        var viewedCount = Object.keys(state.stats.slidesViewed).length;
+        var completion = Math.round((viewedCount / SLIDES.length) * 100);
+        var elapsedSec = Math.max(1, Math.round((Date.now() - state.stats.sessionStart) / 1000));
+
+        telemetryBody.innerHTML =
+          '<div class="specs-grid">' +
+            '<div class="spec-box"><div class="spec-label">Deck Coverage</div><div class="spec-val">' + viewedCount + ' / ' + SLIDES.length + ' Slides (' + completion + '%)</div></div>' +
+            '<div class="spec-box"><div class="spec-label">Active Dwell Time</div><div class="spec-val">' + elapsedSec + ' seconds</div></div>' +
+            '<div class="spec-box"><div class="spec-label">Motif Tile Inspections</div><div class="spec-val">' + state.stats.tileClicks + ' interactions</div></div>' +
+            '<div class="spec-box"><div class="spec-label">1-Tap Briefs Opened</div><div class="spec-val">' + state.stats.briefOpens + ' inquiries</div></div>' +
+          '</div>' +
+          '<div class="roi-callout"><strong>Conversion Architecture:</strong> Each slide embeds a context-locked brief trigger, eliminating friction between artwork discovery and licensing outreach to <strong>disha16march@gmail.com</strong>.</div>';
+        modalTelemetry.classList.add("open");
+      }
+
+      function updateMailtoHref() {
+        var scope = document.getElementById("briefScope").value;
+        var territory = document.getElementById("briefTerritory").value;
+        var brand = document.getElementById("briefBrand").value || "Prospective Client";
+        var timeline = document.getElementById("briefTimeline").value || "Flexible";
+        var notes = document.getElementById("briefNotes").value;
+
+        var subject = encodeURIComponent("Commission / Licensing Inquiry — " + scope + " (" + brand + ")");
+        var body = encodeURIComponent(
+          "Hi Disha,\n\n" +
+          "I reviewed your portfolio and would like to discuss a project:\n\n" +
+          "• Category: " + scope + "\n" +
+          "• Territory: " + territory + "\n" +
+          "• Brand / Name: " + brand + "\n" +
+          "• Target Timeline: " + timeline + "\n" +
+          "• Notes: " + notes + "\n\n" +
+          "Best regards,\n" + brand
+        );
+        document.getElementById("btnMailtoLink").href = "mailto:disha16march@gmail.com?subject=" + subject + "&body=" + body;
+      }
+
+      function openContactModal(prefillNote) {
+        closeAllModals();
+        state.stats.briefOpens += 1;
+        saveStats();
+        var s = SLIDES[state.index];
+        var notesEl = document.getElementById("briefNotes");
+        notesEl.value = prefillNote || ("Interested in commissioning work similar to Slide " + s.num + " (" + s.title + ").");
+        updateMailtoHref();
+        modalContact.classList.add("open");
+      }
+
+      /* Global Button Listeners */
+      document.getElementById("btnHome").addEventListener("click", function () { goToSlide(0); });
+      document.getElementById("btnAllSlides").addEventListener("click", openDirectoryModal);
+      document.getElementById("btnTelemetry").addEventListener("click", openTelemetryModal);
+      document.getElementById("btnContact").addEventListener("click", function () { openContactModal(); });
+      document.getElementById("btnPrev").addEventListener("click", function () { goToSlide(state.index - 1); });
+      document.getElementById("btnNext").addEventListener("click", function () { goToSlide(state.index + 1); });
+
+      document.getElementById("closeDirectory").addEventListener("click", closeAllModals);
+      document.getElementById("closeLightbox").addEventListener("click", closeAllModals);
+      document.getElementById("closeTelemetry").addEventListener("click", closeAllModals);
+      document.getElementById("closeContact").addEventListener("click", closeAllModals);
+
+      [modalDirectory, modalLightbox, modalTelemetry, modalContact].forEach(function (backdrop) {
+        backdrop.addEventListener("click", function (e) {
+          if (e.target === backdrop) closeAllModals();
+        });
+      });
+
+      ["briefScope", "briefTerritory", "briefBrand", "briefTimeline", "briefNotes"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.addEventListener("input", updateMailtoHref);
+        if (el) el.addEventListener("change", updateMailtoHref);
+      });
+
+      document.getElementById("btnCopyEmail").addEventListener("click", function () {
+        state.stats.emailsCopied += 1;
+        saveStats();
+        copyText("disha16march@gmail.com", "Copied disha16march@gmail.com");
+      });
+
+      document.getElementById("btnCopyBrief").addEventListener("click", function () {
+        var text =
+          "To: disha16march@gmail.com\n" +
+          "Category: " + document.getElementById("briefScope").value + "\n" +
+          "Territory: " + document.getElementById("briefTerritory").value + "\n" +
+          "Brand: " + (document.getElementById("briefBrand").value || "N/A") + "\n" +
+          "Timeline: " + (document.getElementById("briefTimeline").value || "N/A") + "\n" +
+          "Brief: " + document.getElementById("briefNotes").value;
+        copyText(text, "Full commission brief copied to clipboard!");
+      });
+
+      /* Bulk PDF Image Loader */
+      document.getElementById("bulkImageLoader").addEventListener("change", function (ev) {
+        var files = Array.prototype.slice.call(ev.target.files || []);
+        if (!files.length) return;
+        files.sort(function (a, b) { return a.name.localeCompare(b.name, undefined, { numeric: true }); });
+        var loaded = 0;
+        files.forEach(function (file,
