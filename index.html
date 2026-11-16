@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disha Saini — Commercial Illustrator, Surface & Print Designer</title>
+  <meta name="description" content="Editorial & commercial illustration, product packaging, jigsaw puzzles, and heritage surface print design by NIFT graduate Disha Saini." />
+
+  <!-- Google Fonts: Fraunces (Editorial Display), Plus Jakarta Sans (Clean UI), JetBrains Mono (Commercial Specs & Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: '#FAF6F0',
+            linenDark: '#F2ECE1',
+            forest: '#183126',
+            forestLight: '#244738',
+            terracotta: '#C85A32',
+            terracottaDark: '#A84622',
+            marigold: '#E6A12E',
+            roseClay: '#D98A7C',
+            indigoArch: '#1F4B7A',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'editorial': '0 12px 36px -8px rgba(24, 49, 38, 0.08), 0 2px 6px -1px rgba(24, 49, 38, 0.04)',
+            'editorial-lg': '0 24px 60px -12px rgba(24, 49, 38, 0.16)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Tactile Cotton & Gouache Paper Grain Overlay */
+    body {
+      background-color: #FAF6F0;
+      color: #183126;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .paper-grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 60;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .hairline {
+      border-color: rgba(24, 49, 38, 0.12);
+    }
+
+    .hairline-b {
+      border-bottom: 1px solid rgba(24, 49, 38, 0.12);
+    }
+
+    .hairline-t {
+      border-top: 1px solid rgba(24, 49, 38, 0.12);
+    }
+
+    /* Subtle Marquee Animation */
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 34s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF6F0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(24, 49, 38, 0.22);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C85A32;
+    }
+
+    /* Card hover lift */
+    .bento-card {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 44px -12px rgba(24, 49, 38, 0.14);
+      border-color: rgba(200, 90, 50, 0.45);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-terracotta selection:text-linen">
+  <!-- Tactile Paper Texture -->
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Toast Notification Banner -->
+  <div id="toast-container" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] pointer-events-none flex flex-col items-center gap-2"></div>
+
+  <!-- =========================================================
+       1. FLOATING GLASSMORPHIC TOP NAVIGATION
+  ========================================================== -->
+  <header class="sticky top-0 z-40 px-4 sm:px-6 lg:px-10 pt-3 pb-2">
+    <nav class="max-w-7xl mx-auto rounded-2xl bg-linen/85 backdrop-blur-md border hairline shadow-editorial px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+      <!-- Brand Monogram -->
+      <a href="#top" class="flex items-center gap-3 group" onclick="Telemetry.track('nav_click', 'logo')">
+        <div class="w-10 h-10 rounded-xl bg-forest text-linen flex items-center justify-center font-serif font-bold text-lg tracking-tight group-hover:bg-terracotta transition-colors">
+          DS
+        </div>
+        <div class="leading-tight">
+          <span class="font-serif font-bold text-base sm:text-lg text-forest block">Disha Saini</span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-forest/65 block">Illustration &amp; Print Studio</span>
+        </div>
+      </a>
+
+      <!-- Section Anchors (Desktop) -->
+      <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-forest/80">
+        <a href="#work" class="hover:text-terracotta transition-colors" onclick="Telemetry.track('nav_click', 'selected_work')">Selected Commissions (14)</a>
+        <a href="#roi-estimator" class="hover:text-terracotta transition-colors" onclick="Telemetry.track('nav_click', 'roi_estimator')">ROI &amp; Licensing</a>
+        <a href="#credentials" class="hover:text-terracotta transition-colors" onclick="Telemetry.track('nav_click', 'credentials')">Heritage &amp; Process</a>
+        <a href="#contact-section" class="hover:text-terracotta transition-colors" onclick="Telemetry.track('nav_click', 'contact_section')">1-Tap Brief</a>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Live Availability Pill -->
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/5 border hairline text-xs font-medium text-forest">
+          <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+          <span>Open for Commissions</span>
+        </div>
+
+        <!-- Live Studio Telemetry Trigger -->
+        <button
+          type="button"
+          onclick="openAnalyticsDrawer()"
+          title="Open Real-Time Visitor Telemetry & ROI Analytics (Shift+A)"
+          class="flex items-center gap-1.5 px-3 py-2 rounded-xl border hairline bg-linenDark/70 hover:bg-forest hover:text-linen text-forest text-xs font-mono transition-colors"
+        >
+          <svg class="w-3.5 h-3.5 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+          <span class="hidden md:inline">Telemetry</span>
+          <span id="nav-engagement-score" class="px-1.5 py-0.5 rounded bg-forest/10 text-[10px] font-semibold">100</span>
+        </button>
+
+        <!-- Primary 1-Tap CTA -->
+        <button
+          type="button"
+          onclick="openContactDrawer('General Commission')"
+          class="px-4 py-2.5 rounded-xl bg-terracotta hover:bg-terracottaDark text-linen text-xs sm:text-sm font-semibold shadow-sm transition-all flex items-center gap-2 active:scale-95"
+        >
+          <span>Commission in 1 Tap</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       2. HIGH-CONVERTING HERO SECTION + 4x4 SIGNATURE MATRIX
+  ========================================================== -->
+  <main id="top">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-8 sm:pt-12 pb-14">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <!-- Left Value Proposition (7 cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-linenDark border hairline">
+            <span class="font-mono text-[11px] font-semibold uppercase tracking-wider text-terracotta">NIFT Fashion Design Graduate</span>
+            <span class="text-forest/30">•</span>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-forest/80">India → UK • Australia • USA</span>
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-forest leading-[1.08] tracking-tight">
+            Tactile storytelling &amp; heritage print systems that turn products into <span class="italic text-terracotta font-normal">collector keepsakes.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-forest/80 max-w-2xl leading-relaxed">
+            I’m <strong>Disha Saini</strong>, a commercial illustrator and surface print designer crafting retail-ready jigsaw puzzles, luxury ceramic &amp; candle packaging, OTT key art, book covers, and hand-embroidered textile motifs for global brands.
+          </p>
+
+          <!-- High-ROI Conversion Action Bar -->
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <button
+              type="button"
+              onclick="openContactDrawer('Commercial Product / Packaging')"
+              class="px-6 py-3.5 rounded-2xl bg-forest hover:bg-forestLight text-linen font-semibold text-sm sm:text-base shadow-editorial transition-all flex items-center gap-2.5 active:scale-95"
+            >
+              <span>Start 1-Tap Project Brief</span>
+              <span class="px-2 py-0.5 rounded-md bg-marigold text-forest font-mono text-[11px] font-bold">&lt; 30s</span>
+            </button>
+
+            <a
+              href="#work"
+              onclick="Telemetry.track('cta_click', 'explore_commercial_work')"
+              class="px-6 py-3.5 rounded-2xl bg-linenDark hover:bg-forest/10 text-forest border hairline font-semibold text-sm sm:text-base transition-all"
+            >
+              Explore 14 Case Studies
+            </a>
+
+            <!-- 1-Tap Copy Email Pill -->
+            <button
+              type="button"
+              onclick="copyEmailOneTap()"
+              class="group px-4 py-3.5 rounded-2xl bg-white/70 hover:bg-white border hairline text-forest text-xs sm:text-sm font-mono flex items-center gap-2 transition-all"
+              title="Click to copy Disha's direct studio email"
+            >
+              <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+              <span>disha16march@gmail.com</span>
+              <svg class="w-4 h-4 text-forest/50 group-hover:text-terracotta transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Commercial ROI Metrics Row -->
+          <div class="grid grid-cols-3 gap-4 pt-5 border-t hairline max-w-xl">
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl font-bold text-forest">4 Continents</p>
+              <p class="font-mono text-[11px] uppercase tracking-wider text-forest/65 mt-0.5">UK, AU, US &amp; India Retail</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl font-bold text-terracotta">1000-Pc</p>
+              <p class="font-mono text-[11px] uppercase tracking-wider text-forest/65 mt-0.5">Print-Ready Precision</p>
+            </div>
+            <div>
+              <p class="font-serif text-2xl sm:text-3xl font-bold text-forest">Full-Suite</p>
+              <p class="font-mono text-[11px] uppercase tracking-wider text-forest/65 mt-0.5">Art + Packaging + Textile</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive 4x4 Signature Motif Matrix (5 cols) -->
+        <div class="lg:col-span-5">
+          <div class="rounded-3xl bg-linenDark/90 border hairline p-4 sm:p-5 shadow-editorial relative">
+            <div class="flex items-center justify-between mb-3 px-1">
+              <div>
+                <span class="font-mono text-[10px] uppercase tracking-widest text-terracotta font-semibold block">Interactive Motif Index</span>
+                <h2 class="font-serif text-base font-bold text-forest">Signature Gouache &amp; Print Matrix</h2>
+              </div>
+              <span id="motif-inspector-badge" class="font-mono text-[11px] px-2.5 py-1 rounded-full bg-forest text-linen">
+                Tap any tile to license
+              </span>
+            </div>
+
+            <!-- 4x4 Illustrated Tile Grid inspired by Cover Page 1 of Illustration Portfolio -->
+            <div id="motif-matrix-grid" class="grid grid-cols-4 gap-2 sm:gap-2.5">
+              <!-- Populated dynamically via JS with bespoke high-craft SVGs -->
+            </div>
+
+            <!-- Active Motif Inspector Bar -->
+            <div id="motif-inspector-panel" class="mt-3.5 p-3 rounded-2xl bg-linen border hairline flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <p id="motif-title" class="font-serif font-bold text-sm text-forest truncate">Rose India 2010 Postage</p>
+                <p id="motif-meta" class="font-mono text-[11px] text-forest/70 truncate">Medium: Digital Gouache • Licensing: Global Print &amp; Stationery</p>
+              </div>
+              <button
+                type="button"
+                id="motif-action-btn"
+                onclick="commissionSelectedMotif()"
+                class="shrink-0 px-3 py-1.5 rounded-xl bg-terracotta text-linen font-mono text-[11px] font-semibold hover:bg-terracottaDark transition-colors"
+              >
+                License Motif →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. TRUSTED BY / GLOBAL COMMERCIAL PROOF MARQUEE
+    ========================================================== -->
+    <section aria-label="Commercial Clients" class="border-y hairline bg-linenDark/60 py-4 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mb-2 flex items-center justify-between">
+        <span class="font-mono text-[10px] uppercase tracking-widest text-forest/60">Trusted by Global Publishers, Studios &amp; Design Houses</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-terracotta hidden sm:inline">Verified Commercial Commissions</span>
+      </div>
+      <div class="relative flex overflow-x-hidden">
+        <div class="animate-marquee flex items-center gap-8 sm:gap-12 px-4">
+          <!-- Set 1 -->
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-marigold"></span> Talking Tables <span class="font-mono text-xs text-forest/50">(UK)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span> Walker &amp; Co. / Purple Puzzle Co. <span class="font-mono text-xs text-forest/50">(Australia)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-forest"></span> Applause Entertainment <span class="font-mono text-xs text-forest/50">(India)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-marigold"></span> Heubach Group <span class="font-mono text-xs text-forest/50">(Global Color Solutions)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span> The Patrika Gift Shop <span class="font-mono text-xs text-forest/50">(Lifestyle &amp; Ceramics)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-forest"></span> Aww Magazine <span class="font-mono text-xs text-forest/50">(Issue 7)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-marigold"></span> Label Ira <span class="font-mono text-xs text-forest/50">(Couture Sarees)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span> M. G. Hernandez <span class="font-mono text-xs text-forest/50">(Hawaii, USA)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-forest"></span> Shweta Tripathi <span class="font-mono text-xs text-forest/50">(Filmography Commission)</span>
+          </span>
+          <!-- Duplicate Set for Seamless Loop -->
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-marigold"></span> Talking Tables <span class="font-mono text-xs text-forest/50">(UK)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span> Walker &amp; Co. / Purple Puzzle Co. <span class="font-mono text-xs text-forest/50">(Australia)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-forest"></span> Applause Entertainment <span class="font-mono text-xs text-forest/50">(India)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-marigold"></span> Heubach Group <span class="font-mono text-xs text-forest/50">(Global Color Solutions)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span> The Patrika Gift Shop <span class="font-mono text-xs text-forest/50">(Lifestyle &amp; Ceramics)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-forest"></span> Aww Magazine <span class="font-mono text-xs text-forest/50">(Issue 7)</span>
+          </span>
+          <span class="font-serif text-lg sm:text-xl font-semibold text-forest/85 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-marigold"></span> Label Ira <span class="font-mono text-xs text-forest/50">(Couture Sarees)</span>
+        
